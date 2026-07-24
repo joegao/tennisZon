@@ -8,6 +8,7 @@ COPY src/main/frontend ./src/main/frontend
 RUN mkdir -p src/main/resources/static \
     && cd src/main/frontend \
     && corepack enable \
+    && corepack prepare pnpm@11.7.0 --activate \
     && pnpm install --frozen-lockfile \
     && pnpm run build
 
