@@ -2,6 +2,21 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import "./styles.css";
+import reviewMatch01 from "./assets/reviews/review-match-01.png";
+import reviewMatch02 from "./assets/reviews/review-match-02.png";
+import reviewMatch03 from "./assets/reviews/review-match-03.png";
+import reviewMatch04 from "./assets/reviews/review-match-04.png";
+import reviewMatch05 from "./assets/reviews/review-match-05.png";
+import reviewMatch06 from "./assets/reviews/review-match-06.png";
+
+const reviewImages = [
+  reviewMatch01,
+  reviewMatch02,
+  reviewMatch03,
+  reviewMatch04,
+  reviewMatch05,
+  reviewMatch06
+];
 
 const copy = {
   zh: {
@@ -48,7 +63,10 @@ const copy = {
     reviews: [
       ["分类方式很专业，是真的理解球员选装备时在意什么。", "张越 / 俱乐部教练"],
       ["球拍和鞋履的推荐逻辑很清楚，我能快速找到硬地训练组合。", "林乔 / 业余联赛选手"],
-      ["视觉质感像高端运动品牌官网，信任感比普通商城强很多。", "陈思 / 赛事策划人"]
+      ["视觉质感像高端运动品牌官网，信任感比普通商城强很多。", "陈思 / 赛事策划人"],
+      ["训练装备分类清楚，比赛日需要的鞋、拍、包都能一次配齐。", "沈亦 / 高校校队队员"],
+      ["青少年球拍和训练球推荐很实用，家长也能快速看懂差异。", "周睿 / 青少年球员"],
+      ["页面上的装备组合很接近真实比赛需求，选购效率明显更高。", "许辰 / 公开赛选手"]
     ]
   },
   en: {
@@ -95,7 +113,10 @@ const copy = {
     reviews: [
       ["The category logic feels genuinely professional.", "Yue Zhang / Club Coach"],
       ["I quickly found the right hard-court training setup.", "Jo Lin / League Player"],
-      ["It feels like a premium sports brand site.", "Si Chen / Event Planner"]
+      ["It feels like a premium sports brand site.", "Si Chen / Event Planner"],
+      ["The match-day gear sets make shoes, rackets, and bags easy to compare.", "Ian Shen / College Player"],
+      ["The junior racket and training ball picks are clear enough for parents too.", "Rui Zhou / Junior Player"],
+      ["The product bundles match real tournament needs and save shopping time.", "Chen Xu / Open Tournament Player"]
     ]
   }
 };
@@ -495,8 +516,9 @@ function App() {
               <h2>{t.reviewsHeading}</h2>
             </div>
             <div className="review-grid">
-              {t.reviews.map(([text, author]) => (
+              {t.reviews.map(([text, author], index) => (
                 <blockquote className="review-card" key={author}>
+                  <img src={reviewImages[index]} alt="" loading="lazy" />
                   <p>"{text}"</p>
                   <footer>{author}</footer>
                 </blockquote>
