@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: tennis-zon
+
+server:
+  port: 8080
+
+supabase:
+  url: https://dpzgzgmrdepsthbpihyl.supabase.co
+  publishable-key: sb_publishable_Cn0BqOA7bzTQkk7zEpATQA_GqOzCSXA

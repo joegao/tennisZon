@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+build/
+src/main/frontend/node_modules/
+src/main/frontend/dist/
+*.log
+*.tmp
+.env
+!.env.example
