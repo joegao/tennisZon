@@ -1,0 +1,6 @@
+GRANT USAGE ON SCHEMA public TO postgres;
+
+GRANT SELECT ON TABLE public.products TO postgres;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT SELECT ON TABLES TO postgres;
