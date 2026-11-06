@@ -409,7 +409,7 @@ function App() {
               <div className="hero-card hero-main-card">
                 <p>Champion Setup</p>
                 <h2>{products[0]?.name || "Pro Spin 98"}</h2>
-                <span>{products[0]?.[lang] || (lang === "zh" ? "正在从 Supabase 加载商品" : "Loading products from Supabase")}</span>
+                <span>{products[0]?.[lang] || (lang === "zh" ? "正在从商品数据库加载" : "Loading from the product catalog")}</span>
               </div>
               <div className="hero-card hero-side-card">
                 <p>Editor's Pick</p>
@@ -455,10 +455,10 @@ function App() {
 
             <div className="product-grid">
               {productsStatus === "loading" && (
-                <p className="product-state">{lang === "zh" ? "正在从 Supabase 加载商品..." : "Loading products from Supabase..."}</p>
+                <p className="product-state">{lang === "zh" ? "正在加载商品..." : "Loading products..."}</p>
               )}
               {productsStatus === "error" && (
-                <p className="product-state">{lang === "zh" ? "商品加载失败，请检查 Supabase 环境变量和 products 表。" : "Products failed to load. Check Supabase environment variables and the products table."}</p>
+                <p className="product-state">{lang === "zh" ? "商品加载失败，请检查数据库连接。" : "Products failed to load. Check the database connection."}</p>
               )}
               {visibleProducts.map((product) => (
                 <article className="product-card" key={product.id}>
