@@ -68,9 +68,9 @@ spec:
           args:
             - "--auto-iam-authn"
             - "--structured-logs"
-            - "--address=0.0.0.0"
+            - "--address=127.0.0.1"
             - "--port=5432"
-            - "project-b8eb1b3e-fa96-470b-9f2:northamerica-northeast1:tenniszon-db"
+            - "457b7930daa9.2822fvbq51gyf.northamerica-northeast1.sql-psc.goog"
           securityContext:
             runAsNonRoot: true
           resources:
